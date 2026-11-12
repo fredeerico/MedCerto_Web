@@ -25,13 +25,3 @@ As outras telas são idênticas.
 flutter pub get
 flutter run -d chrome
 ```
-
-## Publicar no Render
-
-1. Suba esta pasta para um repositório no GitHub.
-2. No Render: **New > Static Site**, escolha o repositório e preencha:
-   - **Build Command:** `git clone https://github.com/flutter/flutter.git --depth 1 -b stable _flutter && _flutter/bin/flutter build web --release`
-   - **Publish Directory:** `build/web`
-3. Depois de publicado, copie o endereço do site (ex.: `https://medcerto-web.onrender.com`).
-4. No serviço **medcerto-api** > **Environment**, edite `CORS_ALLOWED_ORIGINS` e coloque esse
-   endereço (sem barra no fim). Sem isso o navegador bloqueia a lista de remédios.
