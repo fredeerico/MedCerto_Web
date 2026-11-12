@@ -1,0 +1,12 @@
+# Site estático no Render (plano gratuito, não "dorme").
+# O Render baixa o Flutter, gera o site e publica a pasta build/web.
+services:
+  - type: web
+    name: medcerto-web
+    runtime: static
+    buildCommand: git clone https://github.com/flutter/flutter.git --depth 1 -b stable _flutter && _flutter/bin/flutter build web --release
+    staticPublishPath: build/web
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
